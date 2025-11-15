@@ -3,62 +3,19 @@
   pkgs,
   ...
 }: {
-  # Skip GRUB menu
-  boot.loader.timeout = 0;
-  boot.loader.grub.timeoutStyle = "hidden";
-  # Configure Plymouth
-  boot.plymouth.enable = true;
-  boot.plymouth.themePackages = with pkgs; [
-    nixos-bgrt-plymouth
+  imports = [
+    ./neptune-common.nix
   ];
-  boot.plymouth.theme = "bgrt";
-  boot.initrd.verbose = false;
-  boot.consoleLogLevel = 0;
-  boot.kernelParams = [
-    "quiet"
-    "splash"
-  ];
-  # Allow non free packages
-  nixpkgs.config.allowUnfree = true;
-  # Open firewall ports for Active Directory services
-  networking.firewall.allowedUDPPorts = [
-    137
-    138
-  ];
-  networking.firewall.allowedTCPPorts = [
-    139
-    445
-  ];
-  # Enable the firewall
-  networking.firewall.enable = true;
-  # Enable sound with pipewire
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-  # Desktop environment: COSMIC on Wayland
+  # Desktop environment: COSMIC
   services.displayManager.cosmic-greeter.enable = true;
   services.desktopManager.cosmic.enable = true;
-  # Enable printing (CUPS)
-  services.printing.enable = true;
-  # Enable Active Directory services
-  services.realmd.enable = true;
-  services.samba.enable = true;
-  services.sssd.enable = true;
+  # Configure Plymouth theme
+  boot.plymouth.theme = "bgrt";
   # Install applications, etc.
-  programs.git.enable = true;
-  programs.java.enable = true;
-  programs.steam.enable = true;
   environment.systemPackages = with pkgs; [
-    adcli
+    apostrophe
     baobab
-    dbeaver-bin
     dialect
-    discord
     drawing
     file-roller
     fragments
@@ -75,20 +32,11 @@
     gnome-sound-recorder
     gnome-system-monitor
     gnome-weather
-    google-chrome
-    gradle
-    hunspellDicts-en_CA
-    hunspellDicts.fr-any
     libreoffice
     loupe
-    maven
     mousai
-    nodejs
     papers
-    podman-desktop
     pop-gtk-theme
-    postman
-    python314
     redshift
     shortwave
     snapshot
@@ -98,6 +46,5 @@
     warp
     wike
     wordbook
-    vscode
   ];
 }
