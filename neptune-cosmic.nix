@@ -1,15 +1,17 @@
+# COSMIC configuration
 {
   config,
   pkgs,
   ...
 }: {
   imports = [
+    # Import common configurations
     ./neptune-common.nix
   ];
   # Desktop environment: COSMIC
   services.displayManager.cosmic-greeter.enable = true;
   services.desktopManager.cosmic.enable = true;
-  # Configure Plymouth theme
+  # Set Plymouth theme
   boot.plymouth.theme = "bgrt";
   # Install applications, etc.
   environment.systemPackages = with pkgs; [

@@ -1,15 +1,17 @@
+# KDE configuration
 {
   config,
   pkgs,
   ...
 }: {
   imports = [
+    # Import common configurations
     ./neptune-common.nix
   ];
   # Desktop environment: KDE
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
-  # Configure Plymouth theme
+  # Set Plymouth theme
   boot.plymouth.themePackages = with pkgs.kdePackages; [
     breeze-plymouth
   ];

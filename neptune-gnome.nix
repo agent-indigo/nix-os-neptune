@@ -1,9 +1,11 @@
+# GNOME configuration
 {
   config,
   pkgs,
   ...
 }: {
   imports = [
+    # Import common configurations
     ./neptune-common.nix
   ];
   # Enable X11 windowing system
@@ -11,7 +13,7 @@
   # Desktop environment: GNOME
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
-  # Configure Plymouth theme
+  # Set Plymouth theme
   boot.plymouth.theme = "bgrt";
   # Exclude unnecessary/outdated applications, etc.
   services.xserver.excludePackages = with pkgs; [
@@ -30,17 +32,18 @@
     drawing
     fragments
     gnome-browser-connector
-    gnome-extension-manager
     gnome-photos
     gnome-podcasts
     gnome-power-manager
     gnome-secrets
     gnome-sound-recorder
     gnome-tweaks
+    gnomeExtensions.alphabetical-app-grid
     gnomeExtensions.appindicator
     gnomeExtensions.dash-to-dock
     gnomeExtensions.dash-to-panel
     gnomeExtensions.desktop-icons-ng-ding
+    gnomeExtensions.favorites-to-applications-grid
     gnomeExtensions.impatience
     gnomeExtensions.launch-new-instance
     gnomeExtensions.status-icons

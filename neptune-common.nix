@@ -1,3 +1,4 @@
+# Common configurations
 {
   config,
   pkgs,
@@ -6,7 +7,7 @@
   # Skip GRUB menu
   boot.loader.timeout = 0;
   boot.loader.grub.timeoutStyle = "hidden";
-  # Configure Plymouth
+  # Configure boot splash
   boot.plymouth.enable = true;
   boot.plymouth.themePackages = with pkgs; [
     nixos-bgrt-plymouth
@@ -37,7 +38,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-  # Enable printing (CUPS)
+  # Enable printing with CUPS
   services.printing.enable = true;
   # Enable Active Directory services
   services.realmd.enable = true;
