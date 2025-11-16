@@ -4,8 +4,6 @@
   pkgs,
   ...
 }: {
-  # Enable automatic updates
-  system.autoUpgrade.enable = true;
   # Skip GRUB menu
   boot.loader.timeout = 0;
   boot.loader.grub.timeoutStyle = "hidden";
@@ -20,17 +18,6 @@
     "quiet"
     "splash"
   ];
-  # Open firewall ports for Active Directory services
-  networking.firewall.allowedUDPPorts = [
-    137
-    138
-  ];
-  networking.firewall.allowedTCPPorts = [
-    139
-    445
-  ];
-  # Enable the firewall
-  networking.firewall.enable = true;
   # Enable sound with pipewire
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -42,15 +29,23 @@
   };
   # Enable printing with CUPS
   services.printing.enable = true;
-  # Enable Active Directory client services
-  services.realmd.enable = true;
+  # Enable file and printer sharing with SAMBA
   services.samba.enable = true;
-  services.sssd.enable = true;
+  # Open firewall ports used by SAMBA
+  networking.firewall.allowedUDPPorts = [
+    137
+    138
+  ];
+  networking.firewall.allowedTCPPorts = [
+    139
+    445
+  ];
+  # Enable the firewall
+  networking.firewall.enable = true;
   # Install applications, etc.
   programs.java.enable = true;
   programs.steam.enable = true;
   environment.systemPackages = with pkgs; [
-    adcli
     dbeaver-bin
     discord
     google-chrome
@@ -64,4 +59,13 @@
     python314
     vscode
   ];
+  # Automate updates
+  system.autoUpgrade.enable = true;
+  # Automate Nix store cleanup
+  nix.settings.auto-optimise-store = true;
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-old";
+  };
 }
