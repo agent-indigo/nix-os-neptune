@@ -57,5 +57,5 @@
     warp
     wike
     wordbook
-  ]
+  ];
 }
