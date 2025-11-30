@@ -26,23 +26,17 @@
     gnome-disk-utility
     gnome-font-viewer
     gnome-logs
-    gnome-maps
-    gnome-podcasts
     gnome-power-manager
-    gnome-secrets
     gnome-sound-recorder
     gnome-system-monitor
     gnome-weather
     libreoffice
     loupe
-    mousai
     papers
     redshift
-    shortwave
     snapshot
     simple-scan
     sysprof
-    tuba
     warp
     wike
     wordbook
