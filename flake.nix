@@ -17,6 +17,14 @@
           ./modules/hardware/aqemu/configuration.nix
           ./modules/hardware/aqemu/hardware-configuration.nix
           ./modules/hardware/SagerNP7860J/configuration.nix
+          ({
+            config,
+            pkgs,
+            ...
+          }: {
+            # Set host name
+            networking.hostName = "NIX-OS-COSMIC-VM";
+          })
         ];
       };
       SagerNP7860J-AQEMU-GNOME = nixpkgs.lib.nixosSystem {
@@ -27,6 +35,14 @@
           ./modules/hardware/aqemu/configuration.nix
           ./modules/hardware/aqemu/hardware-configuration.nix
           ./modules/hardware/SagerNP7860J/configuration.nix
+          ({
+            config,
+            pkgs,
+            ...
+          }: {
+            # Set host name
+            networking.hostName = "NIX-OS-GNOME-VM";
+          })
         ];
       };
       SagerNP7860J-AQEMU-KDE = nixpkgs.lib.nixosSystem {
@@ -37,6 +53,14 @@
           ./modules/hardware/aqemu/configuration.nix
           ./modules/hardware/aqemu/hardware-configuration.nix
           ./modules/hardware/SagerNP7860J/configuration.nix
+          ({
+            config,
+            pkgs,
+            ...
+          }: {
+            # Set host name
+            networking.hostName = "NIX-OS-KDE-VM";
+          })
         ];
       };
       SagerNP7860J-AQEMU-LXQt = nixpkgs.lib.nixosSystem {
@@ -47,6 +71,14 @@
           ./modules/hardware/aqemu/configuration.nix
           ./modules/hardware/aqemu/hardware-configuration.nix
           ./modules/hardware/SagerNP7860J/configuration.nix
+          ({
+            config,
+            pkgs,
+            ...
+          }: {
+            # Set host name
+            networking.hostName = "NIX-OS-LXQT-VM";
+          })
         ];
       };
       nixos = SagerNP7860J-AQEMU-GNOME;
