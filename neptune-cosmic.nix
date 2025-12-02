@@ -4,10 +4,6 @@
   pkgs,
   ...
 }: {
-  imports = [
-    # Import common configurations
-    ./neptune-common.nix
-  ];
   # Configure boot splash
   boot.plymouth.theme = "bgrt";
   # Desktop environment: COSMIC

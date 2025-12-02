@@ -10,32 +10,40 @@
   }: {
     nixosConfigurations = rec {
       cosmic = nixpkgs.lib.nixosSystem {
-        imports = [
+        system = "x86_64-linux";
+        modules = [
           /etc/nixos/configuration.nix
+          /etc/nixos/hardware-configuration.nix
+          ./neptune.common.nix
           ./neptune-cosmic.nix
         ];
-        system = "x86_64-linux";
       };
       gnome = nixpkgs.lib.nixosSystem {
-        imports = [
+        system = "x86_64-linux";
+        modules = [
           /etc/nixos/configuration.nix
+          /etc/nixos/hardware-configuration.nix
+          ./neptune.common.nix
           ./neptune-gnome.nix
         ];
-        system = "x86_64-linux";
       };
       kde = nixpkgs.lib.nixosSystem {
-        imports = [
+        system = "x86_64-linux";
+        modules = [
           /etc/nixos/configuration.nix
+          /etc/nixos/hardware-configuration.nix
+          ./neptune.common.nix
           ./neptune-kde.nix
         ];
-        system = "x86_64-linux";
       };
       lxqt = nixpkgs.lib.nixosSystem {
-        imports = [
+        system = "x86_64-linux";
+        modules = [
           /etc/nixos/configuration.nix
+          /etc/nixos/hardware-configuration.nix
+          ./neptune.common.nix
           ./neptune-lxqt.nix
         ];
-        system = "x86_64-linux";
       };
       nixos = gnome
     };
