@@ -45,7 +45,7 @@
           ./neptune-lxqt.nix
         ];
       };
-      nixos = gnome
+      nixos = gnome;
     };
   };
 }
