@@ -11,7 +11,7 @@
     nixosConfigurations = rec {
       cosmic = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        imports = [
+        modules = [
           /etc/nixos/configuration.nix
           /etc/nixos/hardware-configuration.nix
           ./neptune-common.nix
@@ -20,7 +20,7 @@
       };
       gnome = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        imports = [
+        modules = [
           /etc/nixos/configuration.nix
           /etc/nixos/hardware-configuration.nix
           ./neptune-common.nix
@@ -29,7 +29,7 @@
       };
       kde = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        imports = [
+        modules = [
           /etc/nixos/configuration.nix
           /etc/nixos/hardware-configuration.nix
           ./neptune-common.nix
@@ -38,7 +38,7 @@
       };
       lxqt = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        imports = [
+        modules = [
           /etc/nixos/configuration.nix
           /etc/nixos/hardware-configuration.nix
           ./neptune-common.nix
