@@ -3,8 +3,13 @@
   pkgs,
   ...
 }: {
-  # Skip boot menu
+  # Bootloader
+  boot.loader.grub.enable = true;
+  boot.loader.grub.device = "/dev/sda";
+  boot.loader.grub.useOSProber = true;
+  # Skip GRUB menu
   boot.loader.timeout = 0;
+  boot.loader.grub.timeoutStyle = "hidden";
   # Configure boot splash
   boot.plymouth.enable = true;
   boot.plymouth.themePackages = with pkgs; [
@@ -26,6 +31,11 @@
     LC_PAPER = "en_CA.UTF-8";
     LC_TELEPHONE = "en_CA.UTF-8";
     LC_TIME = "en_CA.UTF-8";
+  };
+  # Configure X11 keymap
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "";
   };
   # Create users
   # Use `passwd` to create passwords
@@ -52,6 +62,10 @@
   services.printing.enable = true;
   # Enable file and printer sharing with SAMBA
   services.samba.enable = true;
+  # Set host name
+  networking.hostName = "NIXOS-GNOME-VM";
+  # Enable networking
+  networking.networkmanager.enable = true;
   # Open firewall ports used by SAMBA
   networking.firewall.allowedUDPPorts = [
     137

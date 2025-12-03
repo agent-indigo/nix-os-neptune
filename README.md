@@ -1,4 +1,4 @@
-# Nix OS Flake
+# NixOS Flake
 
 ## Description
 
