@@ -84,6 +84,7 @@
   environment.systemPackages = with pkgs; [
     dbeaver-bin
     discord
+    exfatprogs
     frostwire-bin
     google-chrome
     gradle
