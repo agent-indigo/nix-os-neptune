@@ -93,7 +93,7 @@
     nodejs
     podman-desktop
     postman
-    python314
+    python312
     vscode
   ];
   # Automate updates
