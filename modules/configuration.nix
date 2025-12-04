@@ -82,6 +82,7 @@
   programs.java.enable = true;
   programs.steam.enable = true;
   environment.systemPackages = with pkgs; [
+    android-tools
     dbeaver-bin
     discord
     exfatprogs
