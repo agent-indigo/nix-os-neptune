@@ -21,6 +21,7 @@
     lxqt.qlipper
     papirus-icon-theme
     qalculate-qt
+    transmission_4-qt
     vanilla-dmz
     vlc
   ]) ++ (with pkgs.kdePackages; [
@@ -39,6 +40,5 @@
     skanlite
     skanpage
     sweeper
-    transmission_4-qt
   ]);
 }
