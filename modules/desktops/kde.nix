@@ -19,11 +19,9 @@
   environment.systemPackages = (with pkgs; [
     libreoffice-qt
     vlc
-    webcamoid
   ]) ++ (with pkgs.kdePackages; [
     filelight
-    # Kamoso is broken, apparently
-    # kamoso
+    kamoso
     kcalc
     kclock
     kcharselect
