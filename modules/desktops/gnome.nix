@@ -7,15 +7,10 @@
   boot.plymouth.theme = "bgrt";
   # Automatically start transmission daemon on startup
   services.transmission.enable = true;
-  # Enable X11 windowing system
-  services.xserver.enable = true;
   # Desktop environment: GNOME
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
   # Exclude unnecessary/outdated applications, etc.
-  services.xserver.excludePackages = with pkgs; [
-    xterm
-  ];
   environment.gnome.excludePackages = with pkgs; [
     decibels
     epiphany
@@ -42,7 +37,8 @@
     dash-to-dock
     dash-to-panel
     desktop-icons-ng-ding
-    favorites-to-applications-grid
+    # Waiting for support to be restored
+    # favorites-to-applications-grid
     launch-new-instance
     status-icons
     tiling-assistant
