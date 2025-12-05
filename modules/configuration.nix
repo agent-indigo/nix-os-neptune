@@ -67,10 +67,8 @@
   services.samba.enable = true;
   # Enable podman service
   services.podman.enable = true;
-  # Enable zram swap services
-  services.zram.enable = true;
-  services.zram.swap.enable = true;
-  services.zram.compressAlgorithm = "zstd";
+  # Enable swapspace service
+  services.swapspace.enable = true;
   # Set host name
   networking.hostName = "NIXOS-GNOME-VM";
   # Enable networking
