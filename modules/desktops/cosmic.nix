@@ -5,12 +5,15 @@
 }: {
   # Configure boot splash
   boot.plymouth.theme = "bgrt";
+  # Automatically start transmission daemon on startup
+  services.transmission.enable = true;
   # Desktop environment: COSMIC
   services.displayManager.cosmic-greeter.enable = true;
   services.desktopManager.cosmic.enable = true;
   # Install applications, etc.
   environment.systemPackages = with pkgs; [
     baobab
+    cosmic-reader
     drawing
     file-roller
     fragments
@@ -26,7 +29,6 @@
     gnome-weather
     libreoffice
     loupe
-    papers
     redshift
     snapshot
     simple-scan

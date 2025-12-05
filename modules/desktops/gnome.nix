@@ -5,6 +5,8 @@
 }: {
   # Configure boot splash
   boot.plymouth.theme = "bgrt";
+  # Automatically start transmission daemon on startup
+  services.transmission.enable = true;
   # Enable X11 windowing system
   services.xserver.enable = true;
   # Desktop environment: GNOME
@@ -34,7 +36,6 @@
     orchis-theme
     papers
     sysprof
-    transmission_4-gtk
   ]) ++ (with pkgs.gnomeExtensions; [
     alphabetical-app-grid
     appindicator

@@ -95,7 +95,8 @@
     nodejs
     podman-desktop
     postman
-    python312
+    python313
+    swapspace
     vscode
   ];
   # Automate updates
