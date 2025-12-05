@@ -18,11 +18,8 @@
   boot.kernelModules = [];
   boot.extraModulePackages = [];
   fileSystems."/" = {
-    device = "/dev/sda2";
-    fsType = "btrfs";
-    options = [
-      "subvol=@"
-    ];
+    device = "/dev/sda1";
+    fsType = "exfat";
   };
   swapDevices = [];
   networking.useDHCP = lib.mkDefault true;
