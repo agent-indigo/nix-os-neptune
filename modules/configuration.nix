@@ -65,6 +65,12 @@
   services.printing.enable = true;
   # Enable file and printer sharing with SAMBA
   services.samba.enable = true;
+  # Enable podman service
+  services.podman.enable = true;
+  # Enable zram swap services
+  services.zram.enable = true;
+  services.zram.swap.enable = true;
+  services.zram.compressAlgorithm = "zstd";
   # Set host name
   networking.hostName = "NIXOS-GNOME-VM";
   # Enable networking
@@ -89,7 +95,6 @@
     dbeaver-bin
     discord
     exfatprogs
-    frostwire-bin
     google-chrome
     gradle
     hunspellDicts.en_CA
@@ -99,7 +104,6 @@
     podman-desktop
     postman
     python313
-    swapspace
     vscode
   ];
   # Automate updates
