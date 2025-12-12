@@ -90,8 +90,6 @@
   programs.steam.enable = true;
   environment.systemPackages = with pkgs; [
     android-tools
-    aspellDicts.en
-    aspellDicts.fr
     dbeaver-bin
     discord
     exfatprogs
