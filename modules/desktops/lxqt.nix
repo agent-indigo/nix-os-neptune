@@ -23,6 +23,7 @@
     qalculate-qt
     qdirstat
     qpdfview
+    redshift-qt
     transmission_4-qt
     vanilla-dmz
     vlc
