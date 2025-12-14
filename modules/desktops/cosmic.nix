@@ -23,7 +23,6 @@
     gnome-disk-utility
     gnome-font-viewer
     gnome-logs
-    gnome-power-manager
     gnome-sound-recorder
     gnome-system-monitor
     gnome-weather
