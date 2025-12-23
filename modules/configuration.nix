@@ -52,6 +52,11 @@
   };
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  # Create swap file
+  swapDevices = [{
+    file = "/swap.img";
+    size = 4096;
+  }];
   # Enable sound with pipewire
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -65,8 +70,6 @@
   services.printing.enable = true;
   # Enable file and printer sharing with SAMBA
   services.samba.enable = true;
-  # Enable swapspace service
-  services.swapspace.enable = true;
   # Set host name
   networking.hostName = "NIXOS-GNOME-VM";
   # Enable networking
